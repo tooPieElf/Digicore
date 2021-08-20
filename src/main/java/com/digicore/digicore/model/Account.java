@@ -1,10 +1,10 @@
 package com.digicore.digicore.model;
 
-import com.digicore.digicore.dto.accountTransaction.AccountStatementDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -23,6 +23,6 @@ public class Account {
     private BigDecimal accountBalance;
     @OneToOne
     private User user;
-    @OneToMany
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Transaction> transactionList;
 }
