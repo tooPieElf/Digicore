@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class Authentication {
 
-    @PostMapping("/create_account")
-    public ResponseEntity<?> createAccount(@RequestBody CreateAccountDto requestData){
-        return null;
-    }
-
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginDto requestData){
         return null;
