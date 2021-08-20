@@ -8,5 +8,4 @@ public class ApiResponse {
     int responseCode;
     Boolean successResponse;
     String message;
-    Object account;
 }
