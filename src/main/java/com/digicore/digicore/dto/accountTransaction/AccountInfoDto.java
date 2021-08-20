@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-class AccountInfoDto {
+public class AccountInfoDto {
     private String accountName;
     private String accountNumber;
     private Double balance;
