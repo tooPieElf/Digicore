@@ -1,5 +1,6 @@
 package com.digicore.digicore.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,10 +24,11 @@ public class Transaction {
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private Long Id;
     private Date transactionDate;
-    private TransactionType transactionType;
+    private String transactionType;
     private String narration;
     private Double amount;
     private BigDecimal availableBalance;
     @ManyToOne
-    private Account account;
+    @JsonIgnore
+    private User user;
 }
