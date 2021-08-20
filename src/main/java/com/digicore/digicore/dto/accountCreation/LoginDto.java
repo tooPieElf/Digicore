@@ -1,11 +1,11 @@
-package com.digicore.digicore.dto;
+package com.digicore.digicore.dto.accountCreation;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class LoginRequest {
+public class LoginDto {
     String accountNumber;
     String accountPassword;
 }
