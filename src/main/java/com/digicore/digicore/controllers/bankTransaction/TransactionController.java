@@ -1,10 +1,8 @@
 package com.digicore.digicore.controllers.bankTransaction;
 
-import com.digicore.digicore.apiResponse.ApiResponse;
 import com.digicore.digicore.dto.accountCreation.CreateAccountDto;
 import com.digicore.digicore.dto.accountTransaction.AccountDepositDto;
 import com.digicore.digicore.dto.accountTransaction.AccountInfoDto;
-import com.digicore.digicore.dto.accountTransaction.AccountStatementDto;
 import com.digicore.digicore.dto.accountTransaction.AccountWithdrawalDto;
 import com.digicore.digicore.model.User;
 import com.digicore.digicore.service.AccountService;

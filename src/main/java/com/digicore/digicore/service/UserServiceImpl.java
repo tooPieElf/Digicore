@@ -6,6 +6,7 @@ import com.digicore.digicore.dto.accountTransaction.AccountInfoDto;
 import com.digicore.digicore.model.User;
 import com.digicore.digicore.repository.TransactionRepository;
 import com.digicore.digicore.repository.UserRepository;
+import com.digicore.digicore.utils.PasswordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,15 +19,14 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private TransactionRepository transactionRepository;
-    @Autowired
     private AccountNumberGenerator<String> accountNumberGenerator;
 
 
     public User createAccount(@Valid CreateAccountDto createAccountDto){
         User user = new User();
-        //TODO :: encryptpassword later
-        user.setAccountPassword(createAccountDto.getAccountPassword());
+        PasswordUtils passwordUtils = new PasswordUtils();
+        String encodedPassword = passwordUtils.encode(createAccountDto.getAccountPassword());
+        user.setAccountPassword(encodedPassword);
         //TODO :: Throw neccessary error here
         if(checkAccountName(createAccountDto.getAccountName())){
             user.setAccountName(createAccountDto.getAccountName());
